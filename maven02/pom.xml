@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<!-- 当前pom的版本-->
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.imooc.maven02</groupId><!-- 反写的公司网址+项目名-->
+	<artifactId>maven02-model02</artifactId><!-- 项目名+模块名-->
+	<version>0.0.1-SNAPSHOT</version><!-- 当前项目的版本号-->
+	<!-- 
+		snapshot快照
+		alpha内部测试
+		beta公测
+		Release稳定
+		GA正式发布
+	-->
+	<packaging>jar</packaging><!-- 项目打包的方式：jar,war,pom等，默认jar-->
+	<name></name><!-- 项目描述名-->
+	<url></url><!-- 项目地址-->
+	<description></description><!-- 项目描述-->
+	
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+		<java.version>1.8</java.version>
+		<maven.compiler.source>1.8</maven.compiler.source>
+		<maven.compiler.target>1.8</maven.compiler.target>
+	</properties>
+	<dependencies><!-- 依赖列表-->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.10</version>
+			<scop></scop><!-- 依赖范围-->
+			<optional></optional><!-- 依赖是否可选-->
+			<!-- 排除依赖传递列表-->
+			<exclusions>
+				<exclusion></exclusion>
+			</exclusions>
+		</dependency>
+
+		<dependency>
+			<groupId>com.imooc.maven01</groupId>
+			<artifactId>maven01-model</artifactId>
+			<version>0.0.1-SNAPSHOT</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
+				<configuration>
+					<verbose>true</verbose>
+					<fork>true</fork>
+					<executable>${JAVA8_HOME}/bin/javac</executable>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
